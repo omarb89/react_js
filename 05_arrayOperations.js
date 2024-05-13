@@ -67,7 +67,7 @@ console.log(sum(array))
 
 
 
-const findUserById = (array, id) => array.find((user) => user.id === id);
+const findUserById = (array, id) => array.find((user) => user.id === id).name;
 
 const users = [
   { id: 1, name: 'John' },
