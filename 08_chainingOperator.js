@@ -16,6 +16,26 @@
  * 
  */
 
-const getGroupName = (obj) => {}
+const getGroupName = (obj) => {
+    return obj?.group?.name;
+  };
+
+const user1 = {
+    name: "John",
+    group: {
+      name: "admin"
+    }
+  };
+  
+const user2 = {
+    name: "Alice",
+    group: null,
+  };
+
+const groupName1 = getGroupName(user1); // Affiche "admin"
+const groupName2 = getGroupName(user2); // Affiche undefined
+
+console.log(groupName1);
+console.log(groupName2);
 
 module.exports = {getGroupName};
