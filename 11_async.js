@@ -54,15 +54,15 @@ const usingAwait = async (cb) => {
  */
 
 //décommentez la ligne suivante une fois le package installé
-const axios = require("../react_js/node_modules/axios");
+const axios = require("axios");
 
 const apiResponse = async (url) => {
     try {
-      const response = await axios.get(url); // Effectuer la requête API
-      return response.data; // Retourner les données de la réponse
+      const response = await axios.get(url); 
+      return response.data;
     } catch (error) {
       console.error("Erreur lors de la requête API :", error);
-      throw error; // Renvoyer l'erreur
+      throw error; 
     }
   };
 
