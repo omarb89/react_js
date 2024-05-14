@@ -15,8 +15,19 @@
 
 //const {apiResponse} = require("./11_async");
 
-const parallel = () => {
+const { apiResponse } = require("./11_async");
 
-}
-
-module.exports = {parallel};
+const parallel = async () => {
+    try {
+        const urls = [
+            "https://jsonplaceholder.typicode.com/todos/1",
+            "https://jsonplaceholder.typicode.com/todos/2",
+            "https://jsonplaceholder.typicode.com/todos/3"
+        ];
+        const responses = await Promise.all(urls.map(url => apiResponse(url)));
+        return responses;
+    } catch (error) {
+        console.error("Erreur lors de l'exécution en parallèle des appels API :", error);
+        throw error;
+    }
+};
